@@ -1,7 +1,8 @@
 var fs = require("fs");
-fs.readFile("test.js", function(err, content) {
+const path = require('path');
+fs.readFile(path.resolve(__dirname, "callback.js"), function(err, content) {
   if (err) {
-    console.err(err);
+    console.error(err);
   } else {
     console.log("file read: " + content.length + " bytes");
   }

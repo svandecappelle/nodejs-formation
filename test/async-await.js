@@ -7,7 +7,7 @@ async function getAdditionAsynchrone() {
  return nombre1 + nombre2;
 }
 
-console.log("##### Nombre calcul ########");
+console.log("####### Nombre calcul ##########");
 console.log(getAdditionAsynchrone());
 getAdditionAsynchrone().then( (result) => {
     console.log(result);
