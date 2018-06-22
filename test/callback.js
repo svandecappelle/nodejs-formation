@@ -14,7 +14,8 @@ class Reader {
   }
 }
 
+/*
 new Reader().read((result) => {
   console.log(result);
 });
-console.log("after readFile");
+console.log("after readFile");*/

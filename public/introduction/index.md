@@ -45,7 +45,7 @@ file read: 217 bytes
 ## Différentes manière de faire de l'asynchrone
 
 ### Callbacks
-```
+```js
 var fs = require("fs");
 const path = require('path');
 
