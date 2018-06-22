@@ -1,8 +1,11 @@
 const showdown  = require('showdown');
 const showdownHighlight = require("showdown-highlight");
+
 const converter = new showdown.Converter({
+    tables: true,
     extensions: [ showdownHighlight ]
 });
+
 const path = require('path');
 const url = require('url');
 const fs = require('fs');
@@ -39,6 +42,7 @@ const html = (file, res, next) => {
                 return next(err);
             }
             const styleDatas = `<style>${theme}</style>`;
+
             data = converter.makeHtml(styleDatas.concat(data));
             res.send(data);
         });
