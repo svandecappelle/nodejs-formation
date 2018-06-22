@@ -1,17 +1,42 @@
 # Nodejs formation
 ## Introduction
-[Introduction](/introduction)
+
+[Presentation](/introduction/#present)
+,
+[Background](/introduction/#background)
+,
+[Installation](/introduction/#install)
+,
+[L'asynchrone](/introduction/#async)
+,
+[Conclusion](/introduction/#conclusion)
+
+## Modules
+
+[Introduction](/module/#introduction)
+,
+[Utilisation de require](/modules/#requires)
+,
+[Rechercher des modules](/modules/#modules)
+,
+[Publier son module](/modules/#publish)
+,
+[Conclusion](/modules/#conclusion)
 
 ## Flux et évènements
-[Introduction](/flux-and-events)
+[Introduction](/flux-and-events/#introduction)
+,
+[Programation évènementielle](/flux-and-events/#events)
+,
+[Gestion des flux](/flux-and-events/#flux)
 
 ## NodeJs en standalone scripting
-[Introduction](/standalone)
+[Scripting](/standalone)
 
 ## Interagir avec le web
 [Introduction](/web-interract)
 
-## Construire sa Web Applpication
+## Construire sa web application
 [Introduction](/build-web-application)
 
 ## Test et debug

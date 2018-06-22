@@ -6,7 +6,7 @@ const converter = new showdown.Converter({
 const path = require('path');
 const url = require('url');
 const fs = require('fs');
-const dir = __dirname + path.resolve("/public");
+const dir = path.resolve(__dirname, "public");
 
 const THEME = 'modest';
 
@@ -26,11 +26,18 @@ const exists = (files) => {
 }
 
 const html = (file, res, next) => {
-    fs.readFile(__dirname + path.resolve(`/themes/${THEME}.css`), 'utf8', (err, theme) => {
+    fs.readFile(path.resolve(__dirname, `themes/${THEME}.css`), 'utf8', (err, theme) => {
+
+        if (err) {
+            console.error(err);
+        }
+
         fs.readFile(file, 'utf8', (err, data) => {
             var context = {};
-            if(err)
+            if (err) {
+                console.error(err);
                 return next(err);
+            }
             const styleDatas = `<style>${theme}</style>`;
             data = converter.makeHtml(styleDatas.concat(data));
             res.send(data);
@@ -43,9 +50,8 @@ class Renderer {
     render (req, res, next) {
         var file = req.url.toString(),
             fileLower = file.toLowerCase();
-        file = dir + '/' + url.parse(file).pathname;
-        file = path.resolve(file);
-
+            file = url.parse(file).pathname.slice(1);
+        file = path.resolve(dir, file);
         // make sure the final path is in our defined directory
         if (file.substr(0, dir.length) !== dir)
             return res.send(400);
